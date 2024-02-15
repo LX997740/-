@@ -34,11 +34,14 @@ app.use((req, res, next) => {
 
 const jwt_config = require("./jwt_config/index.js");
 const { expressjwt: jwt } = require("express-jwt");
-// app.use(jwt({
-// 	secret:jwtconfig.jwtSecretKey,algorithms:['HS256']
-// }).unless({
-// 	path:[/^\/api\//]
-// }))
+app.use(
+  jwt({
+    secret: jwt_config.jwtSecretKey,
+    algorithms: ["HS256"],
+  }).unless({
+    path: [/^\/api\//],
+  })
+);
 
 const loginRouter = require("./router/login");
 const Joi = require("joi");
