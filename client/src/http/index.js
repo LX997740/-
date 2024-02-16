@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const instance = axios.create({
 	//后端url地址
-	baseURL: 'http://localhost:8000',
+	baseURL: 'http://localhost:3000',
 	timeout: 1000, //设置超时
 	headers: {
 		'Content-Type': 'application/x-www-form-urlencoded'
