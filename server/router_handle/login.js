@@ -39,6 +39,7 @@ exports.login = (req, res) => {
     const tokenStr = jwt.sign(user, jwtconfig.jwtSecretKey, {
       expiresIn: "7h",
     });
+    console.log(results[0]);
     res.send({
       results: results[0],
       status: 0,
